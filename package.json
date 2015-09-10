@@ -1,6 +1,6 @@
 {
   "name": "customlog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Really simple custom logging.",
   "main": "index.js",
   "scripts": {
