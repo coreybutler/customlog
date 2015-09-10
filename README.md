@@ -4,7 +4,7 @@ This is a simple logging module. It can be used to generate pretty/colorized log
 
 ## Usage
 
-Creating a custom logger is straightforward. There are two configuration options that can be passed to a logger: `prefix` and `colorize`. By default, there is no prefix and `colorize` defaults to `true`.
+Creating a custom logger is straightforward. There are a few configuration options that can be passed to a logger. By default, there is no prefix and `colorize` defaults to `true`.
 
 ```js
 var CustomLogger = require('customlog'),
@@ -39,6 +39,19 @@ Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't 
 ```sh
 npm install bewdemo --save
 ```
+
+## Configuration Options
+
+- `prefix: String` will prepend the supplied string to every log message.
+- `postfix: String` will append the supplied string to every log message.
+- `colorize: Boolean` will use a standard set of colors for prettier output.
+- `transform: Function` is a method that receives a single argument (the log
+  message) and returns a string. This can be used to inspect a message and
+  modify the text of a log message before it is written.
+- `after: Function` is a method that is run after a message is logged. This
+  can be useful when a message needs to be sent to a remote logging system. Two
+  arguments are passed to this method. The first is the log type (log, info,
+  warn, error). The second is the final log message.
 
 
 ## Tests
