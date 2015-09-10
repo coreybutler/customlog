@@ -1,0 +1,5 @@
+example
+test
+*.md
+*.png
+node_modules

@@ -1,0 +1,6 @@
+.*
+!.gitignore
+!.npmignore
+_*
+*.log
+node_modules
