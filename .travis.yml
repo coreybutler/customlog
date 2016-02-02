@@ -1,12 +1,18 @@
 language: node_js
 node_js:
-- '0.10'
-- '0.12'
-- '4.0.0'
+- '4.2.6'
 notifications:
   hipchat:
     rooms:
       secure: G86agoGJWFpnW+DIwoY0iZjTi4858qgZUnVSFKkz39zfeIFm/lnmcBG3MqLMzvkjFrj+qoofqAUUbycvA8ZE7FbX6+rOfChPpco14LM/cPWrltNuLEYGHA5ikLTrGXOQpy6HFx0MFxhDQc5GFZWoNOVZb8bRogyv1PZwS2AG7tQ=
     template:
-    - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
+    - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
     format: html
+deploy:
+  provider: npm
+  email: corey@coreybutler.com
+  api_key:
+    secure: VKQfrDAuHEwDFdUzX7yv+DDCctAuKm5fxhs45k2+dyzeZ8y5pKzbvfyg1pqWl+cOmlWiObQZTINZk+F4QWK9vxUEzYvhvspsfLDCtRBrIgRSQTTATmTAp0XJU12mW3oMLz2Pn38fVhphAdjOLLccvSkotEaqc5XlhfeKTRuiNOT+Z8SRcn4oXEo9pA+LuNsMBH/YT3sXQvTwGHVuj4mtwbI/NlHRe39sOuTWM4AG5mQ962u2Miu5zsIDnba0atGFG4Vqo4+Fe6sq8FjDR4zTTVXR+eLuC1AIhX3j7fGvIysY1/qy6cA4ibGeyPMx53fKFzYXT9uftR2tegnesKXkj36q9woat71rJI2sL0q0X3eg4N2K3d6I2Vug6vnmWXqjWyXFZmayNW8eTorqz+1DcFGDbmrfWiIvO1Ifv5HQmqPa2yieBExGZMB3lQee6S5vXDfhbkB1t42h9r/ORWgQ4SxwSFOy3SZaLeApOWH1j+6HkiXhEk4MGSE7F2pRThVbOu1cXHgECYFB2tINuj1MPiUKxEN0Dqw4Cr5pU6mhGoSaW0pG09wU5HxEO0CIT6DH4dtJyetTeWpKEqOelUTvSTG1R90bjUWicHFg4ufIel3Ax2vCKAejVQb6aF5YU63jvZKU0Xxt52GpNW0mswDb2PRB9ndZFv2Ld72Ee0+qLOA=
+  on:
+    tags: true
+    repo: coreybutler/customlog
